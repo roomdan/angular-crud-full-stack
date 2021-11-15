@@ -1,0 +1,38 @@
+<div class="continer" role="form">
+        <div class="form-content">
+            <h1>Manage Task Angular App</h1>
+            <form [formGroup]="userData">
+                <mat-form-field class="input-width" appearance="fill">
+                    <mat-label>You Name</mat-label>
+                    <textarea formControlName='name' matInput placeholder="Example... Alan Sou"></textarea>
+                </mat-form-field>
+                <mat-form-field class="input-width" appearance="fill">
+                    <mat-label>Task Title</mat-label>
+                    <textarea formControlName='title' matInput placeholder="Work in home..."></textarea>
+                </mat-form-field>
+                <mat-form-field class="input-width" appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea formControlName='description' matInput
+                        placeholder="Work and develop a simple page in home.."></textarea>
+                </mat-form-field>
+            </form>
+            <button (click)="postData()" mat-raised-button color="primary">Create Task</button>
+        </div>
+        <div class="task-read">
+            <mat-card class="card-task" *ngFor="let task of tasksData">
+                <mat-card-subtitle class="card-title">{{task.title}}<button (click)="deleteData(task.id)" mat-button color="warn">Delete</button>
+                </mat-card-subtitle>
+                <mat-card-content class="card-content">
+                    <mat-form-field class="input-width" appearance="fill">
+                        <mat-label>You can edit this description</mat-label>
+                        <textarea [disabled]="descriptionDisable" value="{{task.task}}" matInput
+                            placeholder="write a new description"></textarea>
+                    </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions class="card-actions">
+                    <button (click)="editTask(task.id)" class="edit-btn" mat-button>{{btnEditText}}</button>
+                    <button class="finished-btn" mat-button>Finished</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+</div>

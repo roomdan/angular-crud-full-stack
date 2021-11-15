@@ -1,0 +1,126 @@
+.continer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(45deg,rgb(29, 89, 255),rgb(235, 83, 255));
+    @media screen and (max-width:920px) {
+        flex-direction: column;
+    }
+        .form-content{
+            h1 {
+                margin-top: 2rem;
+                color: rgb(0, 89, 255);
+                font-size: 2rem;
+                font-weight: 600;
+                text-align: center;
+            } 
+            width: 45%;
+            height: calc(90vh - 2rem);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            @media screen and(max-width:920px) {
+                margin-top: 2rem;
+                width: 95%;
+            }
+            form {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                min-height: auto;
+                display: flex;
+                flex-direction: column;
+                .input-width{
+                    width: 80%;
+                }
+            }
+            button {
+                width: 100%;
+                background-color: rgb(0, 4, 255);
+                border-radius: 0px;
+            }
+        }
+    
+    
+        .task-read{
+            width: 45%;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            height: calc(90vh - 4rem);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            @media screen and(max-width:920px) {
+                margin-top: 2rem;
+                width: 95%;
+            }
+            .card-task{
+                margin-top: 1rem;
+                width: 80%;
+                scroll-snap-align: start;
+                background-color: rgb(235, 235, 235);
+    
+                .card-title{
+                    display: flex;
+                    justify-content: space-between;
+                    text-transform: capitalize;
+                    color: rgb(0, 4, 255);
+                    font-weight: 400;
+                    font-size: 1.2rem;
+                    button {
+                        background: rgb(255, 110, 110);
+                        border:none;
+                        outline: none;
+                        color: white;
+                        padding: 0px;
+                        transition: all .2s linear ;
+    
+                        &:hover {
+                            background: rgb(255, 45, 45);
+                        }
+                    }
+                }
+                .card-content{
+                    width: 100%;
+                    .input-width {
+                        width: 100%;
+    
+                       textarea{
+                        &:disabled {
+                            color: rgb(87, 87, 87);
+                            font-size: 1rem;
+                        }
+                       }
+                    }
+                }
+    
+                .card-actions{
+                    width: 100%;
+                    .edit-btn {
+                        background-color: rgb(255, 240, 104);
+                        color: rgba(0, 0, 0, 0.726);
+                    }
+                    .finished-btn{
+                        background-color:rgb(147, 255, 147);
+                        color: rgba(0, 0, 0, 0.726);
+                    }
+                    .sent-edit{
+                        background-color:rgb(147, 185, 255);
+                        color: rgba(0, 0, 0, 0.726);
+                    }
+                }
+            }
+        }
+}
